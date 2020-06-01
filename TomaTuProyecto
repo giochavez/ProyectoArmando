@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+// Declaraciones de las funciones void
+void menu();
+void cuadrado(int v_ini, int v_fin);
+void cubo(int v_ini, int v_fin);
+int i; 
+
+int main() {
+	menu();
+	return 0;
+}
+
+void menu(){
+	int inicio, final;
+	
+		printf("\tPrograma que imprime cuadrados y cubo de los n%cmeros del 1 al 5: \n\n", 163);
+		
+		printf("Ingresa el n%cmero en donde quieres empezar: \n", 163);
+		scanf("%d", &inicio);
+		
+		printf("Ingresa el n%cmero en donde quieres terminar: \n", 163);
+		scanf("%d", &final);
+		
+		printf("\n\n");
+
+		cuadrado(inicio, final); //Se llaman a las funciones void, para así, generar los cuadrados
+		cubo(inicio, final); //Llamamos a la funcion void para generar cubos
+		
+	}
+
+void cuadrado(int v_ini, int v_fin){ //declaramos valor inicial y valor final para generar la cantidad de potencias requeridas
+	int numero;
+		for(i=v_ini; i<=v_fin; i++){ //con el for, recorremos los valores uno a uno del inicio al final
+		numero=i*i; //hacemos el cuadrado del numero sin llamar a pow, multiplicamos el numero por el mismo una vez
+		printf("\tCuadrados del n%cmero %d: %d\n", 163, i, numero);	
+		}
+}
+
+void cubo(int v_ini, int v_fin){ //valores iniciales y finales
+	int numero; 
+	for(i=v_ini; i<=v_fin; i++){
+	numero=i*i*i; //hacemos el cubo multiplicando el numero por si mismo 3 veces
+		printf("\tCubo del n%cmero %d: %d\n", 163, i, numero);
+
+	}
+}
